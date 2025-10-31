@@ -1,0 +1,101 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-10-30 12:53:50.285334",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "loan_id",
+  "paid_amount",
+  "column_break_dpnh",
+  "loan_status",
+  "application_date",
+  "column_break_ucif",
+  "loan_amount",
+  "due_date",
+  "column_break_wrjt",
+  "outstanding_balance"
+ ],
+ "fields": [
+  {
+   "fieldname": "loan_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Loan ID",
+   "options": "Loan",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_dpnh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "loan_status",
+   "fieldtype": "Data",
+   "label": "Loan Status",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ucif",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "loan_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Loan Amount",
+   "non_negative": 1,
+   "precision": "4",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_wrjt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "outstanding_balance",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Outstanding Balance",
+   "non_negative": 1,
+   "precision": "4",
+   "reqd": 1
+  },
+  {
+   "fieldname": "application_date",
+   "fieldtype": "Date",
+   "label": "Application Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "paid_amount",
+   "fieldtype": "Currency",
+   "label": "Paid Amount",
+   "non_negative": 1,
+   "precision": "4",
+   "reqd": 1
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "label": "Due Date",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-10-30 13:00:54.167904",
+ "modified_by": "Administrator",
+ "module": "LineAge",
+ "name": "Loan History",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

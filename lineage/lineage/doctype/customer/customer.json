@@ -1,0 +1,339 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "CUST-.####",
+ "creation": "2025-10-27 19:10:09.106406",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "customer_details_tab",
+  "salutation",
+  "sex",
+  "email_address",
+  "id_number",
+  "id_type",
+  "column_break_hjzh",
+  "first_name",
+  "date_of_birth",
+  "phone_number",
+  "district",
+  "province",
+  "column_break_rbso",
+  "last_name",
+  "age",
+  "home_address",
+  "nationality",
+  "column_break_bdwp",
+  "full_name",
+  "employment_status",
+  "status",
+  "section_break_rxdb",
+  "notes",
+  "section_break_sbzo",
+  "date_of_joining",
+  "new_customer",
+  "column_break_jiie",
+  "year",
+  "column_break_zhme",
+  "quarter",
+  "column_break_zvfv",
+  "month",
+  "next_of_kin_tab",
+  "nok_fullname",
+  "nok_home_address",
+  "column_break_txyt",
+  "nok_phone_number",
+  "column_break_jufu",
+  "nok_relationship",
+  "column_break_zpgu",
+  "nok_email_address",
+  "loan_history_tab",
+  "loan_history"
+ ],
+ "fields": [
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "First Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "salutation",
+   "fieldtype": "Select",
+   "label": "Salutation",
+   "options": "\nMr.\nMrs.\nMs.",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_hjzh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_rbso",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_bdwp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Full Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sex",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Sex",
+   "options": "\nMale\nFemale",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email_address",
+   "fieldtype": "Data",
+   "label": "Email Address",
+   "options": "Email"
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Int",
+   "label": "Age",
+   "non_negative": 1,
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Phone Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employment_status",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employment Status",
+   "options": "Employment Status",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_sbzo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "year",
+   "fieldtype": "Data",
+   "label": "Year",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_jiie",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "quarter",
+   "fieldtype": "Data",
+   "label": "Quarter",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_zhme",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "month",
+   "fieldtype": "Data",
+   "label": "Month",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Customer Details"
+  },
+  {
+   "default": "New",
+   "fieldname": "status",
+   "fieldtype": "Link",
+   "label": "Status",
+   "options": "Customer Status",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_rxdb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date_of_joining",
+   "fieldtype": "Date",
+   "label": "Date of Joining"
+  },
+  {
+   "fieldname": "column_break_zvfv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "next_of_kin_tab",
+   "fieldtype": "Tab Break",
+   "label": "Next of Kin"
+  },
+  {
+   "fieldname": "home_address",
+   "fieldtype": "Data",
+   "label": "Home Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "nok_fullname",
+   "fieldtype": "Data",
+   "label": "Full Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "nok_home_address",
+   "fieldtype": "Data",
+   "label": "Home Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_txyt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "nok_phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_jufu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "nok_relationship",
+   "fieldtype": "Select",
+   "label": "Relationship",
+   "options": "\nMother\nFather\nWife\nHusband\nSister\nBrother\nUncle\nAunt",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_zpgu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "nok_email_address",
+   "fieldtype": "Data",
+   "label": "Email Address"
+  },
+  {
+   "fieldname": "loan_history_tab",
+   "fieldtype": "Tab Break",
+   "label": "Loan History"
+  },
+  {
+   "default": "0",
+   "fieldname": "new_customer",
+   "fieldtype": "Check",
+   "label": "New Customer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "loan_history",
+   "fieldtype": "Table",
+   "options": "Loan History"
+  },
+  {
+   "fieldname": "district",
+   "fieldtype": "Link",
+   "label": "District",
+   "options": "District",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "district.province",
+   "fieldname": "province",
+   "fieldtype": "Link",
+   "label": "Province",
+   "options": "Province",
+   "read_only": 1
+  },
+  {
+   "fieldname": "id_number",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "ID Number",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "id_type",
+   "fieldtype": "Link",
+   "label": "ID Type",
+   "options": "ID Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "nationality",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Nationality",
+   "options": "Nationality",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-10-31 16:51:44.902584",
+ "modified_by": "Administrator",
+ "module": "LineAge",
+ "name": "Customer",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "protect_attached_files": 1,
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

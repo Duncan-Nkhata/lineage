@@ -25,8 +25,8 @@ app_license = "mit"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/lineage/css/lineage.css"
-# app_include_js = "/assets/lineage/js/lineage.js"
+app_include_css = "/assets/lineage/css/custom.css"
+app_include_js = "/assets/lineage/js/custom.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/lineage/css/lineage.css"
@@ -138,10 +138,10 @@ app_license = "mit"
 # Hook on document methods and events
 
 # doc_events = {
-# 	"*": {
+# 	"Customer": {
 # 		"on_update": "method",
 # 		"on_cancel": "method",
-# 		"on_trash": "method"
+# 		"on_trash": "method",
 # 	}
 # }
 
