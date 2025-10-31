@@ -20,3 +20,6 @@ def blacklist(self):
      doc.status = "Blacklisted"
      doc.save(ignore_permissions=True)
      frappe.msgprint(_("Customer: {0} has been blacklisted.").format(doc.name))
+
+def newLoan(self):
+     pass

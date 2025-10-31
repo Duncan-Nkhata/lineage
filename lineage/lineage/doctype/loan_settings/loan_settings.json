@@ -1,0 +1,142 @@
+{
+ "actions": [],
+ "creation": "2025-10-31 17:49:03.117342",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "default_interest_rate",
+  "default_repayment_schedule",
+  "grace_period_days",
+  "column_break_aqoy",
+  "late_penalty_fee",
+  "interest_calculation_method",
+  "service_fee_",
+  "column_break_jbwf",
+  "maximum_loan_amount",
+  "minimum_loan_amount",
+  "column_break_wnor",
+  "minimum_loan_term",
+  "maximum_loan_term"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_aqoy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_jbwf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "maximum_loan_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Maximum Loan Amount",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_wnor",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "minimum_loan_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Minimum Loan Amount",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "late_penalty_fee",
+   "fieldtype": "Float",
+   "label": "Late Payment Penalty (%)",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "grace_period_days",
+   "fieldtype": "Int",
+   "label": "Grace Period (Days)",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "interest_calculation_method",
+   "fieldtype": "Link",
+   "label": "Interest Calculation Method",
+   "options": "Interest Calculation Method",
+   "reqd": 1
+  },
+  {
+   "fieldname": "minimum_loan_term",
+   "fieldtype": "Int",
+   "label": "Minimum Loan Term (Months)",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "maximum_loan_term",
+   "fieldtype": "Int",
+   "label": "Maximum Loan Term (Months)",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "default_interest_rate",
+   "fieldtype": "Float",
+   "label": "Default Interest Rate (%)",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "default_repayment_schedule",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Default Repayment Schedule",
+   "non_negative": 1,
+   "options": "\nQuarterly\nMonthly\nWeekly",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "service_fee_",
+   "fieldtype": "Float",
+   "label": "Service Fee (%)",
+   "non_negative": 1,
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-10-31 21:41:15.854094",
+ "modified_by": "Administrator",
+ "module": "LineAge",
+ "name": "Loan Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

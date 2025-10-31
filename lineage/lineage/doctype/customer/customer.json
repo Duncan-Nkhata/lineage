@@ -23,10 +23,12 @@
   "age",
   "home_address",
   "nationality",
+  "marital_status",
   "column_break_bdwp",
   "full_name",
   "employment_status",
   "status",
+  "employer_name",
   "section_break_rxdb",
   "notes",
   "section_break_sbzo",
@@ -92,10 +94,10 @@
   },
   {
    "fieldname": "sex",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Sex",
-   "options": "\nMale\nFemale",
+   "options": "Sex",
    "reqd": 1
   },
   {
@@ -236,9 +238,9 @@
   },
   {
    "fieldname": "nok_relationship",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "label": "Relationship",
-   "options": "\nMother\nFather\nWife\nHusband\nSister\nBrother\nUncle\nAunt",
+   "options": "Relationship",
    "reqd": 1
   },
   {
@@ -304,12 +306,25 @@
    "label": "Nationality",
    "options": "Nationality",
    "reqd": 1
+  },
+  {
+   "fieldname": "marital_status",
+   "fieldtype": "Link",
+   "label": "Marital Status",
+   "options": "Marital Status"
+  },
+  {
+   "depends_on": "eval: doc.employment_status === \"Employed\"",
+   "fieldname": "employer_name",
+   "fieldtype": "Data",
+   "label": "Employer Name",
+   "mandatory_depends_on": "eval: doc.employment_status === \"Employed\""
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-31 16:51:44.902584",
+ "modified": "2025-10-31 22:09:40.131782",
  "modified_by": "Administrator",
  "module": "LineAge",
  "name": "Customer",
@@ -332,6 +347,7 @@
  "protect_attached_files": 1,
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
+ "search_fields": "full_name, id_number",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

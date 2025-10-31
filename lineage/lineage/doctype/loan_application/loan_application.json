@@ -1,11 +1,42 @@
 {
  "actions": [],
- "allow_rename": 1,
+ "autoname": "LAPP-.####",
  "creation": "2025-10-28 13:41:21.848506",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "loan_amount"
+  "loan_type",
+  "number_of_items",
+  "column_break_qnrc",
+  "loan_amount",
+  "value_of_items",
+  "column_break_jvpf",
+  "loan_tenure",
+  "column_break_pnhw",
+  "service_fee",
+  "customer_details_tab",
+  "customer_id",
+  "customer_phone_number",
+  "column_break_vzqi",
+  "customer_name",
+  "customer_email",
+  "column_break_xrho",
+  "customer_sex",
+  "customer_age",
+  "column_break_uhrm",
+  "customer_id_number",
+  "customer_address",
+  "section_break_nwyx",
+  "nok_name",
+  "nok_address",
+  "column_break_bogl",
+  "nok_relationship",
+  "column_break_axti",
+  "nok_phone_number",
+  "column_break_sldn",
+  "nok_email_address",
+  "collateral_tab",
+  "amended_from"
  ],
  "fields": [
   {
@@ -14,17 +45,201 @@
    "in_list_view": 1,
    "label": "Loan Amount",
    "non_negative": 1,
-   "precision": "4",
+   "precision": "2",
    "reqd": 1
+  },
+  {
+   "fieldname": "loan_type",
+   "fieldtype": "Link",
+   "label": "Loan Type",
+   "options": "Loan Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_qnrc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_jvpf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "loan_tenure",
+   "fieldtype": "Int",
+   "label": "Loan Tenure",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_pnhw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "service_fee",
+   "fieldtype": "Currency",
+   "label": "Service Fee",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "number_of_items",
+   "fieldtype": "Int",
+   "label": "Number of Items"
+  },
+  {
+   "fieldname": "value_of_items",
+   "fieldtype": "Currency",
+   "label": "Value of Items",
+   "non_negative": 1,
+   "precision": "2"
+  },
+  {
+   "fieldname": "customer_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Customer Details"
+  },
+  {
+   "fieldname": "customer_id",
+   "fieldtype": "Link",
+   "label": "Customer ID",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer_id.phone_number",
+   "fieldname": "customer_phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_vzqi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "customer_id.full_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Full Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer_email",
+   "fieldtype": "Data",
+   "label": "Email Address"
+  },
+  {
+   "fieldname": "column_break_xrho",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "customer_id.sex",
+   "fieldname": "customer_sex",
+   "fieldtype": "Data",
+   "label": "Sex",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer_id.age",
+   "fieldname": "customer_age",
+   "fieldtype": "Data",
+   "label": "Age",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_uhrm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "customer_id.id_number",
+   "fieldname": "customer_id_number",
+   "fieldtype": "Data",
+   "label": "ID Number",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer_id.home_address",
+   "fieldname": "customer_address",
+   "fieldtype": "Data",
+   "label": "Home Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_nwyx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "customer_id.nok_fullname",
+   "fieldname": "nok_name",
+   "fieldtype": "Data",
+   "label": "Full Name",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer_id.nok_home_address",
+   "fieldname": "nok_address",
+   "fieldtype": "Data",
+   "label": "Home Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_bogl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "customer_id.nok_relationship",
+   "fieldname": "nok_relationship",
+   "fieldtype": "Data",
+   "label": "Relationship",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_axti",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "customer_id.phone_number",
+   "fieldname": "nok_phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_sldn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "customer_id.nok_email_address",
+   "fieldname": "nok_email_address",
+   "fieldtype": "Data",
+   "label": "Email Address"
+  },
+  {
+   "fieldname": "collateral_tab",
+   "fieldtype": "Tab Break",
+   "label": "Collateral"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Loan Application",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2025-10-28 13:41:50.845644",
+ "modified": "2025-10-31 22:05:50.353772",
  "modified_by": "Administrator",
  "module": "LineAge",
  "name": "Loan Application",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {

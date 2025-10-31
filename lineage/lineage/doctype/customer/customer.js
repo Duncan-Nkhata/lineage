@@ -19,8 +19,18 @@ frappe.ui.form.on("Customer", {
         if (!frm.is_new()){
             if (frm.doc.status !== 'Suspended' && frm.doc.status !== 'Closed' && frm.doc.status !== 'Blacklisted') {
                 frm.add_custom_button(__('New Loan'), function () {
-                frappe.set_route('customers')
-            })
+                    frappe.call({
+                        method: "lineage.calculations.settings",
+                        args: {
+                            self: frm.doc.name
+                        },
+                        callback: function (r) {
+                            if (!r.exc) {
+                                frm.reload_doc();
+                            }
+                        }
+                    });
+                });
             }
             if (frm.doc.status !== 'Suspended' && frm.doc.status !== 'Closed' && frm.doc.status !== 'Inactive' && frm.doc.status !== 'Blacklisted') {
                 frm.add_custom_button(__('Blacklist'), function () {
@@ -91,6 +101,12 @@ frappe.ui.form.on("Customer", {
             frm.set_value('age', age);
         } else {
             frm.set_value('age', null);
+        }
+    },
+    employment_status(frm) {
+        if (frm.doc.employment_status === 'Employed') {
+           frm.set_value('employer_name', '');
+           frappe.refresh_field('employer_name');
         }
     }
 });
