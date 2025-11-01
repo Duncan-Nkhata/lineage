@@ -19,16 +19,8 @@ frappe.ui.form.on("Customer", {
         if (!frm.is_new()){
             if (frm.doc.status !== 'Suspended' && frm.doc.status !== 'Closed' && frm.doc.status !== 'Blacklisted') {
                 frm.add_custom_button(__('New Loan'), function () {
-                    frappe.call({
-                        method: "lineage.calculations.settings",
-                        args: {
-                            self: frm.doc.name
-                        },
-                        callback: function (r) {
-                            if (!r.exc) {
-                                frm.reload_doc();
-                            }
-                        }
+                    frappe.new_doc('Loan Application', {
+                        customer_id: frm.doc.name
                     });
                 });
             }

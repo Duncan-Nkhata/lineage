@@ -5,16 +5,23 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "general_information_tab",
   "loan_type",
+  "interest_rate",
+  "interest",
   "number_of_items",
   "column_break_qnrc",
   "loan_amount",
+  "service_fee_rate",
+  "service_fee",
   "value_of_items",
   "column_break_jvpf",
   "loan_tenure",
+  "disbursement_amount",
   "column_break_pnhw",
-  "service_fee",
+  "amount_owed",
   "customer_details_tab",
+  "customer_section",
   "customer_id",
   "customer_phone_number",
   "column_break_vzqi",
@@ -40,6 +47,7 @@
  ],
  "fields": [
   {
+   "default": "0",
    "fieldname": "loan_amount",
    "fieldtype": "Currency",
    "in_list_view": 1,
@@ -64,9 +72,10 @@
    "fieldtype": "Column Break"
   },
   {
+   "default": "1",
    "fieldname": "loan_tenure",
    "fieldtype": "Int",
-   "label": "Loan Tenure",
+   "label": "Loan Tenure (Months)",
    "non_negative": 1,
    "reqd": 1
   },
@@ -75,6 +84,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "default": "0",
    "fieldname": "service_fee",
    "fieldtype": "Currency",
    "label": "Service Fee",
@@ -167,7 +177,8 @@
   },
   {
    "fieldname": "section_break_nwyx",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Next of Kin"
   },
   {
    "fetch_from": "customer_id.nok_fullname",
@@ -229,13 +240,63 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "customer_section",
+   "fieldtype": "Section Break",
+   "label": "Customer"
+  },
+  {
+   "fieldname": "general_information_tab",
+   "fieldtype": "Tab Break",
+   "label": "General Information"
+  },
+  {
+   "default": "0",
+   "fieldname": "disbursement_amount",
+   "fieldtype": "Currency",
+   "label": "Disbursement Amount",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "interest_rate",
+   "fieldtype": "Float",
+   "label": "Interest Rate (%)",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "interest",
+   "fieldtype": "Currency",
+   "label": "Interest",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "amount_owed",
+   "fieldtype": "Currency",
+   "label": "Amount Owed",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "service_fee_rate",
+   "fieldtype": "Float",
+   "label": "Service Fee (%)",
+   "non_negative": 1,
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-10-31 22:05:50.353772",
+ "modified": "2025-11-01 19:43:28.573305",
  "modified_by": "Administrator",
  "module": "LineAge",
  "name": "Loan Application",

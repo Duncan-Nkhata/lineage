@@ -9,6 +9,4 @@ from datetime import datetime
 @frappe.whitelist()
 def settings():
     settings = frappe.get_doc("Loan Settings")
-    frappe.errprint(settings.as_dict())
-    frappe.msgprint(_(f"Maximum Loan Amount: {settings.maximum_loan_amount}"))
     return settings.as_dict()
