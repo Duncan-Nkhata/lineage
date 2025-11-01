@@ -6,6 +6,7 @@
  "engine": "InnoDB",
  "field_order": [
   "general_information_tab",
+  "loan_details_section",
   "loan_type",
   "interest_rate",
   "interest",
@@ -42,8 +43,7 @@
   "nok_phone_number",
   "column_break_sldn",
   "nok_email_address",
-  "collateral_tab",
-  "amended_from"
+  "collateral_tab"
  ],
  "fields": [
   {
@@ -232,16 +232,6 @@
    "label": "Collateral"
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Loan Application",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
-  },
-  {
    "fieldname": "customer_section",
    "fieldtype": "Section Break",
    "label": "Customer"
@@ -290,13 +280,18 @@
    "label": "Service Fee (%)",
    "non_negative": 1,
    "reqd": 1
+  },
+  {
+   "fieldname": "loan_details_section",
+   "fieldtype": "Section Break",
+   "label": "Loan Details"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-11-01 19:43:28.573305",
+ "modified": "2025-11-01 20:51:12.203372",
  "modified_by": "Administrator",
  "module": "LineAge",
  "name": "Loan Application",

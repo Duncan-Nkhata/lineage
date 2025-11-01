@@ -5,12 +5,13 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "item_category",
+  "type",
   "column_break_acfx",
   "value",
   "column_break_zhwj",
   "proof_of_ownership",
   "column_break_dxkq",
+  "condition",
   "section_break_damy",
   "description"
  ],
@@ -31,12 +32,7 @@
   {
    "fieldname": "description",
    "fieldtype": "Text Editor",
-   "label": "Description"
-  },
-  {
-   "fieldname": "item_category",
-   "fieldtype": "Data",
-   "label": "Item Category",
+   "label": "Description",
    "reqd": 1
   },
   {
@@ -56,12 +52,24 @@
   {
    "fieldname": "column_break_dxkq",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Data",
+   "label": "Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "condition",
+   "fieldtype": "Data",
+   "label": "Condition",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-31 22:07:38.239926",
+ "modified": "2025-11-01 21:09:12.969317",
  "modified_by": "Administrator",
  "module": "LineAge",
  "name": "Collateral",
