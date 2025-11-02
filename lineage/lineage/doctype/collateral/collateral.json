@@ -5,6 +5,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "general_information_tab",
   "type",
   "column_break_acfx",
   "value",
@@ -13,7 +14,15 @@
   "column_break_dxkq",
   "condition",
   "section_break_damy",
-  "description"
+  "description",
+  "customer_details_tab",
+  "customer_id",
+  "column_break_xayl",
+  "customer_name",
+  "column_break_hihz",
+  "phone_number",
+  "column_break_scnx",
+  "id_number"
  ],
  "fields": [
   {
@@ -64,12 +73,59 @@
    "fieldtype": "Data",
    "label": "Condition",
    "reqd": 1
+  },
+  {
+   "fieldname": "general_information_tab",
+   "fieldtype": "Tab Break",
+   "label": "General Information"
+  },
+  {
+   "fieldname": "customer_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Customer Details"
+  },
+  {
+   "fieldname": "customer_id",
+   "fieldtype": "Link",
+   "label": "Customer ID",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_xayl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_hihz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_scnx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "id_number",
+   "fieldtype": "Data",
+   "label": "ID Number",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-11-01 21:09:12.969317",
+ "modified": "2025-11-01 23:02:03.691547",
  "modified_by": "Administrator",
  "module": "LineAge",
  "name": "Collateral",
