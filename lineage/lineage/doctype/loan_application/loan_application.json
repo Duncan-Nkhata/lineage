@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_events_in_timeline": 1,
  "autoname": "LAPP-.####",
  "creation": "2025-10-28 13:41:21.848506",
  "doctype": "DocType",
@@ -43,7 +44,8 @@
   "nok_phone_number",
   "column_break_sldn",
   "nok_email_address",
-  "collateral_tab"
+  "collateral_tab",
+  "amended_from"
  ],
  "fields": [
   {
@@ -90,6 +92,7 @@
    "label": "Service Fee",
    "non_negative": 1,
    "precision": "2",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -248,6 +251,7 @@
    "label": "Disbursement Amount",
    "non_negative": 1,
    "precision": "2",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -263,6 +267,7 @@
    "fieldtype": "Currency",
    "label": "Interest",
    "non_negative": 1,
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -272,6 +277,7 @@
    "label": "Amount Owed",
    "non_negative": 1,
    "precision": "2",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -285,13 +291,23 @@
    "fieldname": "loan_details_section",
    "fieldtype": "Section Break",
    "label": "Loan Details"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Loan Application",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-11-01 20:51:12.203372",
+ "modified": "2025-11-04 23:04:19.716323",
  "modified_by": "Administrator",
  "module": "LineAge",
  "name": "Loan Application",
@@ -315,5 +331,7 @@
  "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1,
+ "track_views": 1
 }

@@ -21,5 +21,12 @@ def blacklist(self):
      doc.save(ignore_permissions=True)
      frappe.msgprint(_("Customer: {0} has been blacklisted.").format(doc.name))
 
+@frappe.whitelist()
+def reactivate(self):
+     doc = frappe.get_doc("Customer", self)
+     doc.status = "Active"
+     doc.save(ignore_permissions=True)
+     frappe.msgprint(_("Customer: {0} has been reactivated.").format(doc.name))
+
 def newLoan(self):
      pass

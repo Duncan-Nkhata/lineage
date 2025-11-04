@@ -68,8 +68,30 @@ frappe.ui.form.on("Customer", {
                 );
                 })
             }
+            if (frm.doc.status === 'Suspended' || frm.doc.status === 'Blacklisted') {
+                frm.add_custom_button(__('Reactivate'), function () {
+                    frappe.confirm(__('Are you sure you want to reactivate this customer?'),
+                    function () {
+                        frappe.call({
+                            method: "lineage.tasks.reactivate",
+                            args: {
+                                self: frm.doc.name
+                            },
+                            callback: function (r) {
+                                if (!r.exc) {
+                                    frm.reload_doc();
+                                }
+                            }
+                        });
+                    },
+                    function () {
+                        frappe.msgprint(__('Reactivation cancelled.'));
+                    }
+                );
+                });
+            }
         }
- 	},
+    },
     salutation(frm) {
         update_full_name(frm);
     },
@@ -99,9 +121,9 @@ frappe.ui.form.on("Customer", {
         if (frm.doc.employment_status === 'Employed') {
            frm.set_value('employer_name', '');
            frappe.refresh_field('employer_name');
+            }
         }
-    }
-});
+    });
 
 function update_full_name(frm) {
     let first_name = frm.doc.first_name || '';
