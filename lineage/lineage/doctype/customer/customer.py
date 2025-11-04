@@ -25,6 +25,15 @@ class Customer(Document):
 			self.new_customer = True
 			self.save(ignore_permissions=True)
 
+		doc = frappe.new_doc("ToDo")
+		doc.priority = "High"
+		doc.status = "Open"
+		doc.allocated_to = frappe.session.user
+		doc.reference_type = "Customer"
+		doc.reference_name = self.name
+		doc.description = f"Assignment for {self.name}"
+		doc.insert(ignore_permissions=True)
+
 	def validate(self):
 		pass
 

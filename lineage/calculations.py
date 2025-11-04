@@ -10,3 +10,4 @@ from datetime import datetime
 def settings():
     settings = frappe.get_doc("Loan Settings")
     return settings.as_dict()
+
