@@ -2,6 +2,13 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on("Loan Application", {
+    onload: function(frm) {
+         if (frm.is_new()){
+            if (frm.doc.application_date) {
+                set_month_quarter_year(frm);
+            }
+         }
+    },
 	refresh(frm) {
         frm.add_custom_button(__('Back'), function () {
             frappe.set_route('List', 'Loan Application', 'List')
@@ -10,14 +17,24 @@ frappe.ui.form.on("Loan Application", {
             frappe.set_route('loan_applications')
         })
 
-        frappe.db.get_doc('Loan Settings', null).then(settings => {
-            frm.set_value('interest_rate', settings.default_interest_rate);
-                refresh_field('interest_rate');
+        if (frm.is_new()){
+            frappe.db.get_doc('Loan Settings', null).then(settings => {
+                frm.set_value('interest_rate', settings.default_interest_rate);
+                    refresh_field('interest_rate');
 
-            frm.set_value('service_fee_rate', settings.service_fee);
-            refresh_field('service_fee_rate');
-        });
+                frm.set_value('service_fee_rate', settings.service_fee);
+                refresh_field('service_fee_rate');
+            });
+        }
 	},
+    loan_type (frm) {
+        if (frm.doc.loan_type !== "Collateral Based") {
+            frm.clear_table("collateral_items");
+            frm.refresh_field("collateral_items");
+            frm.set_value("value_of_items", 0);
+            frm.set_value("number_of_items", 0);
+        }
+    }
 });
 
 frappe.ui.form.on('Loan Application', {
@@ -49,4 +66,68 @@ function refresh_calculations(frm) {
     frm.set_value('service_fee', service_fee);
     frm.set_value('amount_owed', amount_owed);
     frm.set_value('disbursement_amount', disbursement_amount);
+}
+
+function set_month_quarter_year(frm) {
+    // Get the Date of Joining value
+    var application_date = frm.doc.application_date;
+    
+    // Convert the date string into a Date object
+    var date = new Date(application_date);
+    
+    // Extract the year and month
+    var year = date.getFullYear();
+    var month = date.getMonth(); // Month is 0-based (0 = January, 1 = February, ...)
+    var quarter = get_quarter(month);
+
+    // Set the values in the respective fields
+    frm.set_value('year', year);
+    frm.set_value('month', get_month_name(month));
+    frm.set_value('quarter', quarter);
+}
+
+// Helper function to get the quarter based on the month
+function get_quarter(month) {
+    if (month < 3) {
+        return 'Q1';
+    } else if (month < 6) {
+        return 'Q2';
+    } else if (month < 9) {
+        return 'Q3';
+    } else {
+        return 'Q4';
+    }
+}
+
+// Helper function to get the month name
+function get_month_name(month) {
+    var months = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+    return months[month];
+}
+
+frappe.ui.form.on("Collateral Items", {
+    collateral_items_add: function(frm, cdt, cdn) {
+        update_collateral_totals(frm);
+    },
+    collateral_items_remove: function(frm, cdt, cdn) {
+        update_collateral_totals(frm);
+    },
+    value: function(frm, cdt, cdn) {
+        update_collateral_totals(frm);
+    }
+});
+
+function update_collateral_totals(frm) {
+    let total_value = 0;
+
+    if (frm.doc.collateral_items && frm.doc.collateral_items.length > 0) {
+        frm.doc.collateral_items.forEach(item => {
+            total_value += flt(item.value);
+        });
+    }
+    frm.set_value("value_of_items", total_value);
+    frm.set_value("number_of_items", frm.doc.collateral_items.length || 0);
 }

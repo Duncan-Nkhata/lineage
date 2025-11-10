@@ -1,20 +1,30 @@
 {
  "actions": [],
- "allow_rename": 1,
+ "autoname": "COL-.####",
  "creation": "2025-10-27 19:17:02.785669",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "general_information_tab",
   "type",
+  "status",
   "column_break_acfx",
   "value",
   "column_break_zhwj",
   "proof_of_ownership",
   "column_break_dxkq",
-  "condition",
+  "collateral_condition",
   "section_break_damy",
   "description",
+  "loan_details_tab",
+  "loan_application_details_tab",
+  "loan_application",
+  "column_break_dpbd",
+  "application_amount",
+  "column_break_efta",
+  "application_status",
+  "column_break_hebo",
+  "amount_owed",
   "customer_details_tab",
   "customer_id",
   "column_break_xayl",
@@ -31,7 +41,7 @@
    "in_list_view": 1,
    "label": "Value",
    "non_negative": 1,
-   "precision": "4",
+   "precision": "2",
    "reqd": 1
   },
   {
@@ -54,8 +64,9 @@
   },
   {
    "fieldname": "proof_of_ownership",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "label": "Proof of Ownership",
+   "options": "Proof of Ownership",
    "reqd": 1
   },
   {
@@ -64,14 +75,10 @@
   },
   {
    "fieldname": "type",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
    "label": "Type",
-   "reqd": 1
-  },
-  {
-   "fieldname": "condition",
-   "fieldtype": "Data",
-   "label": "Condition",
+   "options": "Collateral Type",
    "reqd": 1
   },
   {
@@ -96,9 +103,11 @@
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "customer_id.full_name",
    "fieldname": "customer_name",
    "fieldtype": "Data",
    "label": "Customer Name",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -106,9 +115,11 @@
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "customer_id.phone_number",
    "fieldname": "phone_number",
    "fieldtype": "Data",
    "label": "Phone Number",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -116,19 +127,89 @@
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "customer_id.id_number",
    "fieldname": "id_number",
    "fieldtype": "Data",
    "label": "ID Number",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "loan_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Loan Details"
+  },
+  {
+   "fieldname": "loan_application_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Loan Application Details"
+  },
+  {
+   "fieldname": "loan_application",
+   "fieldtype": "Link",
+   "label": "Loan Application",
+   "options": "Loan Application",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_dpbd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "application_amount",
+   "fieldtype": "Currency",
+   "label": "Application Amount",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_efta",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "application_status",
+   "fieldtype": "Data",
+   "label": "Application Status",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_hebo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amount_owed",
+   "fieldtype": "Currency",
+   "label": "Amount Owed",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Collateral Status",
+   "reqd": 1
+  },
+  {
+   "fieldname": "collateral_condition",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Collateral Condition",
+   "options": "Collateral Condition",
    "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-11-01 23:02:03.691547",
+ "modified": "2025-11-07 19:45:05.728211",
  "modified_by": "Administrator",
  "module": "LineAge",
  "name": "Collateral",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
@@ -148,5 +229,6 @@
  "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1
 }

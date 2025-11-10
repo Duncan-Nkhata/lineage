@@ -1,27 +1,331 @@
 {
  "actions": [],
- "autoname": "LN-.###.-LA",
+ "allow_import": 1,
+ "autoname": "LN-.####",
  "creation": "2025-10-27 19:05:17.473170",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "loan_amount"
+  "loan_details_tab",
+  "general_infromation_section",
+  "loan_amount",
+  "service_fee",
+  "disbursed_amount",
+  "column_break_uonq",
+  "interest",
+  "interest_rate",
+  "paid_amount",
+  "column_break_ddwq",
+  "total_amount",
+  "outstanding_amount",
+  "column_break_xrxr",
+  "amount_received",
+  "status",
+  "loan_payment_tab",
+  "customer_details_tab",
+  "customer_information_section",
+  "customer_id",
+  "customer_email",
+  "column_break_oygw",
+  "customer_id_number",
+  "column_break_mese",
+  "customer_name",
+  "column_break_lnpq",
+  "customer_phone_number",
+  "section_break_aqju",
+  "kin_full_name",
+  "column_break_rwru",
+  "kin_phone_number",
+  "column_break_rzya",
+  "kin_relationship",
+  "column_break_dcau",
+  "kin_email_address",
+  "application_details_tab",
+  "application_id",
+  "column_break_qply",
+  "amount_applied_for",
+  "column_break_snnn",
+  "loan_type",
+  "column_break_jhio",
+  "application_status",
+  "amended_from"
  ],
  "fields": [
   {
+   "fetch_from": "application_id.loan_amount",
    "fieldname": "loan_amount",
    "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Loan Amount",
    "non_negative": 1,
-   "precision": "4",
+   "precision": "2",
    "reqd": 1
+  },
+  {
+   "fetch_from": "application_id.service_fee",
+   "fieldname": "service_fee",
+   "fieldtype": "Currency",
+   "label": "Service Fee",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_uonq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "application_id.amount_owed",
+   "fieldname": "outstanding_amount",
+   "fieldtype": "Currency",
+   "label": "Outstanding Amount",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "application_id.interest_rate",
+   "fieldname": "interest_rate",
+   "fieldtype": "Float",
+   "label": "Interest Rate(%)",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ddwq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "application_id.interest",
+   "fieldname": "interest",
+   "fieldtype": "Currency",
+   "label": "Interest",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "application_id.amount_owed",
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "disbursed_amount",
+   "fieldtype": "Currency",
+   "label": "Disbursed Amount",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_xrxr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "application_id.disbursement_amount",
+   "fieldname": "amount_received",
+   "fieldtype": "Currency",
+   "label": "Amount Received",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "paid_amount",
+   "fieldtype": "Currency",
+   "label": "Paid Amount",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "loan_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Loan Details"
+  },
+  {
+   "fieldname": "customer_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Customer Details"
+  },
+  {
+   "fieldname": "application_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Application Details"
+  },
+  {
+   "fieldname": "customer_id",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Customer ID",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_oygw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_id_number",
+   "fieldtype": "Data",
+   "label": "ID Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_mese",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Full Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_lnpq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_aqju",
+   "fieldtype": "Section Break",
+   "label": "Next of Kin Information"
+  },
+  {
+   "fieldname": "kin_full_name",
+   "fieldtype": "Data",
+   "label": "Full Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_rwru",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "kin_phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_rzya",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "kin_relationship",
+   "fieldtype": "Data",
+   "label": "Relationship",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_dcau",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "kin_email_address",
+   "fieldtype": "Data",
+   "label": "Email Address"
+  },
+  {
+   "fieldname": "general_infromation_section",
+   "fieldtype": "Section Break",
+   "label": "General Infromation"
+  },
+  {
+   "fieldname": "loan_payment_tab",
+   "fieldtype": "Tab Break",
+   "label": "Loan Payment(s)"
+  },
+  {
+   "fieldname": "application_id",
+   "fieldtype": "Link",
+   "label": "Application ID",
+   "options": "Loan Application",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_qply",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "application_id.loan_amount",
+   "fieldname": "amount_applied_for",
+   "fieldtype": "Currency",
+   "label": "Amount Applied For",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_snnn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "application_id.loan_type",
+   "fieldname": "loan_type",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Loan Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_jhio",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "application_id.status",
+   "fieldname": "application_status",
+   "fieldtype": "Data",
+   "label": "Application Status",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer_information_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Information"
+  },
+  {
+   "default": "Awaiting Disbursement",
+   "fieldname": "status",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Loan Status",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer_email",
+   "fieldtype": "Data",
+   "label": "Email Address"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Loan",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2025-10-27 19:07:31.082139",
+ "modified": "2025-11-09 20:48:49.327945",
  "modified_by": "Administrator",
  "module": "LineAge",
  "name": "Loan",

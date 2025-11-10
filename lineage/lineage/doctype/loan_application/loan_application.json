@@ -1,27 +1,41 @@
 {
  "actions": [],
  "allow_events_in_timeline": 1,
- "autoname": "LAPP-.####",
+ "allow_import": 1,
+ "autoname": "APP-.####",
  "creation": "2025-10-28 13:41:21.848506",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "general_information_tab",
   "loan_details_section",
-  "loan_type",
+  "application_date",
   "interest_rate",
   "interest",
   "number_of_items",
   "column_break_qnrc",
-  "loan_amount",
+  "loan_type",
   "service_fee_rate",
   "service_fee",
   "value_of_items",
   "column_break_jvpf",
-  "loan_tenure",
+  "loan_amount",
   "disbursement_amount",
+  "status",
   "column_break_pnhw",
+  "loan_tenure",
   "amount_owed",
+  "section_break_esho",
+  "notes",
+  "section_break_anxp",
+  "column_break_xjnq",
+  "year",
+  "column_break_bupu",
+  "quarter",
+  "column_break_fumw",
+  "month",
+  "collateral_tab",
+  "collateral_items",
   "customer_details_tab",
   "customer_section",
   "customer_id",
@@ -44,7 +58,6 @@
   "nok_phone_number",
   "column_break_sldn",
   "nok_email_address",
-  "collateral_tab",
   "amended_from"
  ],
  "fields": [
@@ -61,6 +74,7 @@
   {
    "fieldname": "loan_type",
    "fieldtype": "Link",
+   "in_standard_filter": 1,
    "label": "Loan Type",
    "options": "Loan Type",
    "reqd": 1
@@ -96,14 +110,18 @@
    "reqd": 1
   },
   {
+   "depends_on": "eval: doc.loan_type == 'Collateral Based'",
    "fieldname": "number_of_items",
    "fieldtype": "Int",
-   "label": "Number of Items"
+   "label": "Collateral Items",
+   "mandatory_depends_on": "eval: doc.loan_type == 'Collateral Based'"
   },
   {
+   "depends_on": "eval: doc.loan_type == 'Collateral Based'",
    "fieldname": "value_of_items",
    "fieldtype": "Currency",
-   "label": "Value of Items",
+   "label": "Collateral Value",
+   "mandatory_depends_on": "eval: doc.loan_type == 'Collateral Based'",
    "non_negative": 1,
    "precision": "2"
   },
@@ -115,6 +133,7 @@
   {
    "fieldname": "customer_id",
    "fieldtype": "Link",
+   "in_standard_filter": 1,
    "label": "Customer ID",
    "options": "Customer",
    "reqd": 1
@@ -124,6 +143,7 @@
    "fieldname": "customer_phone_number",
    "fieldtype": "Data",
    "label": "Phone Number",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -135,12 +155,14 @@
    "fieldname": "customer_name",
    "fieldtype": "Data",
    "label": "Full Name",
+   "read_only": 1,
    "reqd": 1
   },
   {
    "fieldname": "customer_email",
    "fieldtype": "Data",
-   "label": "Email Address"
+   "label": "Email Address",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_xrho",
@@ -149,8 +171,10 @@
   {
    "fetch_from": "customer_id.sex",
    "fieldname": "customer_sex",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "label": "Sex",
+   "options": "Sex",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -158,6 +182,7 @@
    "fieldname": "customer_age",
    "fieldtype": "Data",
    "label": "Age",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -169,6 +194,7 @@
    "fieldname": "customer_id_number",
    "fieldtype": "Data",
    "label": "ID Number",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -176,6 +202,7 @@
    "fieldname": "customer_address",
    "fieldtype": "Data",
    "label": "Home Address",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -188,6 +215,7 @@
    "fieldname": "nok_name",
    "fieldtype": "Data",
    "label": "Full Name",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -195,6 +223,7 @@
    "fieldname": "nok_address",
    "fieldtype": "Data",
    "label": "Home Address",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -206,6 +235,7 @@
    "fieldname": "nok_relationship",
    "fieldtype": "Data",
    "label": "Relationship",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -217,6 +247,7 @@
    "fieldname": "nok_phone_number",
    "fieldtype": "Data",
    "label": "Phone Number",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -227,7 +258,8 @@
    "fetch_from": "customer_id.nok_email_address",
    "fieldname": "nok_email_address",
    "fieldtype": "Data",
-   "label": "Email Address"
+   "label": "Email Address",
+   "read_only": 1
   },
   {
    "fieldname": "collateral_tab",
@@ -293,6 +325,62 @@
    "label": "Loan Details"
   },
   {
+   "fieldname": "section_break_anxp",
+   "fieldtype": "Section Break",
+   "hidden": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "application_date",
+   "fieldtype": "Date",
+   "label": "Application Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_bupu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "year",
+   "fieldtype": "Data",
+   "label": "Year"
+  },
+  {
+   "fieldname": "column_break_fumw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "quarter",
+   "fieldtype": "Data",
+   "label": "Quarter"
+  },
+  {
+   "fieldname": "month",
+   "fieldtype": "Data",
+   "label": "Month"
+  },
+  {
+   "depends_on": "eval: doc.loan_type == 'Collateral Based'",
+   "fieldname": "collateral_items",
+   "fieldtype": "Table",
+   "label": "Collateral Items",
+   "mandatory_depends_on": "eval: doc.loan_type == 'Collateral Based'",
+   "options": "Collateral Items"
+  },
+  {
+   "fieldname": "column_break_xjnq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_esho",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes"
+  },
+  {
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
@@ -301,13 +389,23 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "default": "Pending Review",
+   "fieldname": "status",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Loan Application Status",
+   "read_only": 1,
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-11-04 23:04:19.716323",
+ "modified": "2025-11-08 15:08:47.120756",
  "modified_by": "Administrator",
  "module": "LineAge",
  "name": "Loan Application",
@@ -315,15 +413,20 @@
  "owner": "Administrator",
  "permissions": [
   {
+   "amend": 1,
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
    "export": 1,
+   "import": 1,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "select": 1,
    "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],

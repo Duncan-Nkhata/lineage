@@ -1,38 +1,244 @@
 {
  "actions": [],
- "allow_rename": 1,
+ "autoname": "PAY-.####",
  "creation": "2025-10-27 19:12:38.180563",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "paid_amount",
-  "mode_of_payment"
+  "payment_details_tab",
+  "section_break_ehzf",
+  "payment_date",
+  "account",
+  "column_break_kqjl",
+  "issued_by",
+  "mode_of_payment",
+  "column_break_akkb",
+  "total_amount",
+  "payment_type",
+  "column_break_mnfc",
+  "new_balance",
+  "loan_details_section",
+  "loan_id",
+  "column_break_coix",
+  "loan_amount",
+  "column_break_ugzj",
+  "loan_balance",
+  "column_break_gxfk",
+  "loan_paid_amount",
+  "customer_details_tab",
+  "customer_id",
+  "customer_email_address",
+  "column_break_mowf",
+  "customer_name",
+  "column_break_fmwh",
+  "customer_phone_number",
+  "column_break_hybh",
+  "id_number",
+  "amended_from"
  ],
  "fields": [
   {
-   "fieldname": "paid_amount",
-   "fieldtype": "Currency",
-   "in_list_view": 1,
-   "label": "Paid Amount",
-   "non_negative": 1,
-   "precision": "4",
-   "reqd": 1
-  },
-  {
+   "fetch_from": "account.mode_of_payment",
    "fieldname": "mode_of_payment",
    "fieldtype": "Link",
    "label": "Mode of Payment",
    "options": "Mode of Payment",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_kqjl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payment_date",
+   "fieldtype": "Date",
+   "label": "Payment Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "account",
+   "fieldtype": "Link",
+   "label": "Account",
+   "options": "Account",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_akkb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "user_fullname",
+   "fieldname": "issued_by",
+   "fieldtype": "Data",
+   "label": "Issued By",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "payment_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "General Information"
+  },
+  {
+   "fieldname": "loan_id",
+   "fieldtype": "Link",
+   "label": "Loan ID",
+   "options": "Loan",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_coix",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "loan_id.total_amount",
+   "fieldname": "loan_amount",
+   "fieldtype": "Currency",
+   "label": "Loan Amount",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ugzj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_gxfk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_ehzf",
+   "fieldtype": "Section Break",
+   "label": "Payment Details"
+  },
+  {
+   "fieldname": "customer_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Customer Details"
+  },
+  {
+   "fetch_from": "loan_id.customer_id",
+   "fieldname": "customer_id",
+   "fieldtype": "Link",
+   "label": "Customer ID",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer_id.email_address",
+   "fieldname": "customer_email_address",
+   "fieldtype": "Data",
+   "label": "Email Address"
+  },
+  {
+   "fieldname": "column_break_mowf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "customer_id.full_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Full Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_fmwh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "customer_id.phone_number",
+   "fieldname": "customer_phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_hybh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "customer_id.id_number",
+   "fieldname": "id_number",
+   "fieldtype": "Data",
+   "label": "ID Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "loan_details_section",
+   "fieldtype": "Section Break",
+   "label": "Loan Details"
+  },
+  {
+   "fetch_from": "loan_id.paid_amount",
+   "fieldname": "loan_paid_amount",
+   "fieldtype": "Currency",
+   "label": "Paid Amount",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_mnfc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Payment",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "payment_type",
+   "fieldtype": "Link",
+   "label": "Type",
+   "options": "Payment Type",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "loan_id.outstanding_amount",
+   "fieldname": "loan_balance",
+   "fieldtype": "Currency",
+   "label": "Loan Balance",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "new_balance",
+   "fieldtype": "Currency",
+   "label": "New Balance",
+   "non_negative": 1,
+   "precision": "2",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Amount",
+   "non_negative": 1,
+   "precision": "2",
    "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2025-10-27 19:14:46.193972",
+ "modified": "2025-11-09 22:42:34.574270",
  "modified_by": "Administrator",
  "module": "LineAge",
  "name": "Payment",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
@@ -52,5 +258,6 @@
  "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1
 }
