@@ -1,7 +1,7 @@
 {
  "aggregate_function_based_on": "",
  "background_color": "",
- "color": "#5de1e6",
+ "color": "#5f71fc",
  "creation": "2025-10-30 13:18:48.466046",
  "currency": "ZMW",
  "docstatus": 0,
@@ -14,7 +14,7 @@
  "is_public": 1,
  "is_standard": 1,
  "label": "New Customers",
- "modified": "2025-10-30 13:52:03.299759",
+ "modified": "2025-11-17 18:22:06.079396",
  "modified_by": "Administrator",
  "module": "LineAge",
  "name": "New Customers",

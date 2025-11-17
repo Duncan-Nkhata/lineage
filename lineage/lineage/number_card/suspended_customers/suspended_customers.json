@@ -1,7 +1,7 @@
 {
  "aggregate_function_based_on": "",
  "background_color": "",
- "color": "#EC864B",
+ "color": "#5f71fc",
  "creation": "2025-11-05 09:38:16.254047",
  "currency": "ZMW",
  "docstatus": 0,
@@ -14,7 +14,7 @@
  "is_public": 1,
  "is_standard": 1,
  "label": "Suspended Customers",
- "modified": "2025-11-05 09:39:11.331818",
+ "modified": "2025-11-17 18:22:06.144370",
  "modified_by": "Administrator",
  "module": "LineAge",
  "name": "Suspended Customers",

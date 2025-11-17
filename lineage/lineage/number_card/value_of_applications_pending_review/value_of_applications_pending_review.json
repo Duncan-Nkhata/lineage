@@ -1,6 +1,6 @@
 {
  "aggregate_function_based_on": "",
- "color": "#EC864B",
+ "color": "#5f71fc",
  "creation": "2025-11-08 14:59:26.503288",
  "currency": "ZMW",
  "docstatus": 0,
@@ -14,7 +14,7 @@
  "is_standard": 1,
  "label": "Value of Applications Pending Review",
  "method": "lineage.api.value_of_pr",
- "modified": "2025-11-08 15:00:09.335474",
+ "modified": "2025-11-17 18:22:06.265627",
  "modified_by": "Administrator",
  "module": "LineAge",
  "name": "Value of Applications Pending Review",

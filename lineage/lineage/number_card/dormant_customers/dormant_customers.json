@@ -1,6 +1,6 @@
 {
  "aggregate_function_based_on": "",
- "color": "#39E4A5",
+ "color": "#5f71fc",
  "creation": "2025-11-05 09:43:11.600560",
  "currency": "ZMW",
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_public": 1,
  "is_standard": 1,
  "label": "Dormant Customers",
- "modified": "2025-11-05 09:43:11.600560",
+ "modified": "2025-11-17 18:22:06.155249",
  "modified_by": "Administrator",
  "module": "LineAge",
  "name": "Dormant Customers",

@@ -37,6 +37,7 @@
   "new_customer",
   "column_break_jiie",
   "year",
+  "currently_owing",
   "column_break_zhme",
   "quarter",
   "column_break_zvfv",
@@ -139,7 +140,8 @@
   },
   {
    "fieldname": "section_break_sbzo",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "hidden": 1
   },
   {
    "fieldname": "year",
@@ -305,8 +307,7 @@
    "fieldtype": "Link",
    "in_standard_filter": 1,
    "label": "Nationality \ud83c\udf0d",
-   "options": "Nationality",
-   "reqd": 1
+   "options": "Nationality"
   },
   {
    "fieldname": "marital_status",
@@ -320,12 +321,18 @@
    "fieldtype": "Data",
    "label": "Employer Name",
    "mandatory_depends_on": "eval: doc.employment_status === \"Employed\""
+  },
+  {
+   "default": "0",
+   "fieldname": "currently_owing",
+   "fieldtype": "Check",
+   "label": "Currently Owing"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-11-04 23:21:17.553914",
+ "modified": "2025-11-16 00:53:07.796152",
  "modified_by": "Administrator",
  "module": "LineAge",
  "name": "Customer",

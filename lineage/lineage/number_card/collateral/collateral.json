@@ -1,5 +1,6 @@
 {
  "aggregate_function_based_on": "",
+ "color": "#5f71fc",
  "creation": "2025-11-07 19:14:33.297783",
  "currency": "ZMW",
  "docstatus": 0,
@@ -12,7 +13,7 @@
  "is_public": 1,
  "is_standard": 1,
  "label": "Collateral",
- "modified": "2025-11-07 19:14:33.297783",
+ "modified": "2025-11-17 18:22:06.177651",
  "modified_by": "Administrator",
  "module": "LineAge",
  "name": "Collateral",

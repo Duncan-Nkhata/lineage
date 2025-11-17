@@ -1,0 +1,28 @@
+/*Active Tab Color*/
+button.nav-link.active {
+    color: #5f71fc !important;
+    border-bottom:1px solid #5f71fc !important;
+}
+
+/*Title Heading*/
+h3.ellipsis.title-text {
+    color: #5f71fc !important;
+}
+
+/*Help Button*/
+li.nav-item.dropdown.dropdown-help.dropdown-mobile.d-none.d-lg-block {
+    display: none !important;
+}
+
+/*Pulic Side Bar Label*/
+button.btn-reset.standard-sidebar-label {
+    display: none !important;
+}
+
+.btn-reset.standard-sidebar-label {
+    color: #5f71fc !important;
+}
+
+.btn-reset.standard-sidebar-label:hover {
+    color: #5f71fc !important;
+}
