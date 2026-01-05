@@ -11,18 +11,23 @@
   "account",
   "column_break_kqjl",
   "issued_by",
-  "mode_of_payment",
+  "payment_type",
   "column_break_akkb",
   "total_amount",
-  "payment_type",
+  "mode_of_payment",
   "column_break_mnfc",
+  "pop",
   "new_balance",
+  "status",
   "loan_details_section",
   "loan_id",
+  "disbursement_amount",
   "column_break_coix",
   "loan_amount",
+  "disbursed_amount",
   "column_break_ugzj",
   "loan_balance",
+  "loan_status",
   "column_break_gxfk",
   "loan_paid_amount",
   "customer_details_tab",
@@ -33,8 +38,7 @@
   "column_break_fmwh",
   "customer_phone_number",
   "column_break_hybh",
-  "id_number",
-  "amended_from"
+  "id_number"
  ],
  "fields": [
   {
@@ -53,13 +57,13 @@
   {
    "fieldname": "payment_date",
    "fieldtype": "Date",
-   "label": "Payment Date",
+   "label": "Payment Date \ud83d\udcc5",
    "reqd": 1
   },
   {
    "fieldname": "account",
    "fieldtype": "Link",
-   "label": "Account",
+   "label": "Account \ud83e\uddfe",
    "options": "Account",
    "reqd": 1
   },
@@ -98,6 +102,7 @@
    "label": "Loan Amount",
    "non_negative": 1,
    "precision": "2",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -130,7 +135,7 @@
    "fetch_from": "customer_id.email_address",
    "fieldname": "customer_email_address",
    "fieldtype": "Data",
-   "label": "Email Address"
+   "label": "Email Address \ud83d\udce7"
   },
   {
    "fieldname": "column_break_mowf",
@@ -151,7 +156,7 @@
    "fetch_from": "customer_id.phone_number",
    "fieldname": "customer_phone_number",
    "fieldtype": "Data",
-   "label": "Phone Number",
+   "label": "Phone Number \u260e\ufe0f",
    "reqd": 1
   },
   {
@@ -162,7 +167,7 @@
    "fetch_from": "customer_id.id_number",
    "fieldname": "id_number",
    "fieldtype": "Data",
-   "label": "ID Number",
+   "label": "ID Number \ud83e\udeaa",
    "reqd": 1
   },
   {
@@ -171,27 +176,19 @@
    "label": "Loan Details"
   },
   {
+   "depends_on": "eval: doc.type === \"Loan Repayment\"",
    "fetch_from": "loan_id.paid_amount",
    "fieldname": "loan_paid_amount",
    "fieldtype": "Currency",
    "label": "Paid Amount",
    "non_negative": 1,
    "precision": "2",
+   "read_only": 1,
    "reqd": 1
   },
   {
    "fieldname": "column_break_mnfc",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Payment",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
   },
   {
    "fieldname": "payment_type",
@@ -204,13 +201,15 @@
    "fetch_from": "loan_id.outstanding_amount",
    "fieldname": "loan_balance",
    "fieldtype": "Currency",
-   "label": "Loan Balance",
+   "label": "Outstanding Balance",
    "non_negative": 1,
    "precision": "2",
+   "read_only": 1,
    "reqd": 1
   },
   {
    "default": "0",
+   "depends_on": "eval: doc.status === \"Approved\" && doc.type === \"Loan Repayment\"",
    "fieldname": "new_balance",
    "fieldtype": "Currency",
    "label": "New Balance",
@@ -224,9 +223,50 @@
    "fieldname": "total_amount",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Total Amount",
+   "label": "Payment Amount",
    "non_negative": 1,
    "precision": "2",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "status",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Status",
+   "options": "Payment Status",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "loan_id.disbursement_amount",
+   "fieldname": "disbursement_amount",
+   "fieldtype": "Currency",
+   "label": "Disbursement Amount",
+   "non_negative": 1,
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "loan_id.disbursed_amount",
+   "fieldname": "disbursed_amount",
+   "fieldtype": "Currency",
+   "label": "Disbursed Amount",
+   "non_negative": 1,
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "pop",
+   "fieldtype": "Attach",
+   "label": "Proof of Payment"
+  },
+  {
+   "fetch_from": "loan_id.status",
+   "fieldname": "loan_status",
+   "fieldtype": "Link",
+   "label": "Loan Status",
+   "options": "Loan Status",
+   "read_only": 1,
    "reqd": 1
   }
  ],
@@ -234,7 +274,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-11-09 22:42:34.574270",
+ "modified": "2025-12-14 13:10:28.458218",
  "modified_by": "Administrator",
  "module": "LineAge",
  "name": "Payment",

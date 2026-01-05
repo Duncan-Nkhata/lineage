@@ -26,3 +26,23 @@ button.btn-reset.standard-sidebar-label {
 .btn-reset.standard-sidebar-label:hover {
     color: #5f71fc !important;
 }
+
+button.btn.btn-primary.btn-sm {
+    background-color: #5f71fc !important;
+}
+
+button.btn.btn-primary.btn-sm:hover {
+    background-color: #5f71fc !important;
+}
+
+div.section-head {
+    color: #5f71fc !important;
+}
+
+button.btn.btn-sm.btn-primary.btn-block.btn-login {
+    background-color: #5f71fc !important;
+}
+
+button.btn.btn-sm.btn-primary.btn-block.btn-login:hover {
+    background-color: #5f71fc !important;
+}

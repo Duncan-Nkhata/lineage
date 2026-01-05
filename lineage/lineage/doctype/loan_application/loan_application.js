@@ -14,7 +14,7 @@ frappe.ui.form.on("Loan Application", {
             frappe.set_route('List', 'Loan Application', 'List')
         })
         frm.add_custom_button(__('Home'), function () {
-            frappe.set_route('loan_applications')
+            frappe.set_route('loan-applications')
         })
 
         if (frm.is_new()){

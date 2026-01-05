@@ -1,0 +1,211 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<button class=\"btn btn-primary btn-sm primary-action\" onclick=\"frappe.set_route('List', 'Customer', 'List')\">View Customers</button>",
+  "modified": "2025-11-17 21:28:23.073287",
+  "name": "View Customers Button",
+  "private": 0,
+  "roles": [],
+  "script": null,
+  "style": ".btn.btn-primary.btn-sm.primary-action {\r\n    display: block;\r\n    margin: 0 auto;\r\n    width: 80%;\r\n    background-color: #5f71fc;\r\n}\r\n\r\n.btn.btn-primary.btn-sm.primary-action:active {\r\n    display: block;\r\n    margin: 0 auto;\r\n    width: 80%;\r\n    background-color: #5f71fc !important;\r\n}"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<button class=\"btn btn-primary btn-sm primary-action\" onclick=\"frappe.set_route('/app/loan-settings')\">Loan Settings</button>",
+  "modified": "2025-12-05 17:09:22.076034",
+  "name": "Loan Settings Button",
+  "private": 0,
+  "roles": [],
+  "script": null,
+  "style": ".btn.btn-primary.btn-sm.primary-action {\n    display: block;\n    margin: 0 auto;\n    width: 80%;\n    background-color: #5f71fc;\n}\n\n.btn.btn-primary.btn-sm.primary-action:active {\n    display: block;\n    margin: 0 auto;\n    width: 80%;\n    background-color: #5f71fc !important;\n}"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<button class=\"btn btn-primary btn-sm primary-action\" onclick=\"frappe.set_route('/app/query-report/Loan%20Register')\">Loan Register</button>",
+  "modified": "2025-12-05 17:11:49.301594",
+  "name": "Loan Register",
+  "private": 0,
+  "roles": [],
+  "script": null,
+  "style": ".btn.btn-primary.btn-sm.primary-action {\n    display: block;\n    margin: 0 auto;\n    width: 80%;\n    background-color: #5f71fc;\n}\n\n.btn.btn-primary.btn-sm.primary-action:active {\n    display: block;\n    margin: 0 auto;\n    width: 80%;\n    background-color: #5f71fc !important;\n}"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<h3 id=\"greeting\"></h3>\n<h4 id=\"username\"></h4>",
+  "modified": "2025-12-05 20:05:18.428520",
+  "name": "Greeting",
+  "private": 0,
+  "roles": [],
+  "script": "const user = frappe.session.user_fullname || frappe.session.user || \"Guest\";\n    const hour = new Date().getHours();\n\n    let text = \"\";\n    let emoji = \"\";\n\n    if (hour < 12) {\n        text = \"Good Morning\";\n        emoji = \"🌱🌤️\";\n    } else if (hour < 17) {\n        text = \"Good Afternoon\";\n        emoji = \"☀️\";\n    } else if (hour < 20) {\n        text = \"Good Evening\";\n        emoji = \"🌕\";\n    } else {\n        text = \"Goodnight\";\n        emoji = \"🌛🛏️\";\n    }\n    root_element.querySelector('#greeting').textContent = `${text} ${emoji}`;\n    root_element.querySelector('#username').textContent = `${user}`;",
+  "style": "h3, h4 {\n    color: #5f71fc;\n}"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<button class=\"btn btn-primary btn-sm primary-action\" onclick=\"frappe.set_route('/app/query-report/Asset%20Register')\">Asset Register</button>",
+  "modified": "2025-12-05 19:48:41.910753",
+  "name": "Asset Register",
+  "private": 0,
+  "roles": [],
+  "script": null,
+  "style": ".btn.btn-primary.btn-sm.primary-action {\n    display: block;\n    margin: 0 auto;\n    width: 80%;\n    background-color: #5f71fc;\n}\n\n.btn.btn-primary.btn-sm.primary-action:active {\n    display: block;\n    margin: 0 auto;\n    width: 80%;\n    background-color: #5f71fc !important;\n}"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<button class=\"btn btn-primary btn-sm primary-action\" onclick=\"frappe.set_route('List', 'Collateral', 'List')\">View Collateral</button>",
+  "modified": "2025-12-05 19:56:50.250885",
+  "name": "View Collateral",
+  "private": 0,
+  "roles": [],
+  "script": null,
+  "style": ".btn.btn-primary.btn-sm.primary-action {\n    display: block;\n    margin: 0 auto;\n    width: 80%;\n    background-color: #5f71fc;\n}\n\n.btn.btn-primary.btn-sm.primary-action:active {\n    display: block;\n    margin: 0 auto;\n    width: 80%;\n    background-color: #5f71fc !important;\n}"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<button class=\"btn btn-primary btn-sm primary-action\" onclick=\"frappe.set_route('/app/query-report/Customer%20Register')\">Customer Register</button>",
+  "modified": "2025-11-17 21:28:41.363088",
+  "name": "Customer Register Report Button",
+  "private": 0,
+  "roles": [],
+  "script": null,
+  "style": ".btn.btn-primary.btn-sm.primary-action {\r\n    display: block;\r\n    margin: 0 auto;\r\n    width: 80%;\r\n    background-color: #5f71fc;\r\n}\r\n\r\n.btn.btn-primary.btn-sm.primary-action:active {\r\n    display: block;\r\n    margin: 0 auto;\r\n    width: 80%;\r\n    background-color: #5f71fc !important;\r\n}"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<button class=\"btn btn-primary btn-sm primary-action\" onclick=\"frappe.set_route('/app/query-report/Annual%Customer%20Report')\">Annual Report</button>",
+  "modified": "2025-11-17 21:28:36.753684",
+  "name": "Annual Customer Report Button",
+  "private": 0,
+  "roles": [],
+  "script": null,
+  "style": ".btn.btn-primary.btn-sm.primary-action {\r\n    display: block;\r\n    margin: 0 auto;\r\n    width: 80%;\r\n    background-color: #5f71fc;\r\n}\r\n\r\n.btn.btn-primary.btn-sm.primary-action:active {\r\n    display: block;\r\n    margin: 0 auto;\r\n    width: 80%;\r\n    background-color: #5f71fc !important;\r\n}"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<button class=\"btn btn-primary btn-sm primary-action\" onclick=\"frappe.set_route('/app/payment/new-payment')\">New Payment</button>",
+  "modified": "2025-12-05 20:23:16.685210",
+  "name": "New Payment Button",
+  "private": 0,
+  "roles": [],
+  "script": null,
+  "style": ".btn.btn-primary.btn-sm.primary-action {\n    display: block;\n    margin: 0 auto;\n    width: 80%;\n    background-color: #5f71fc;\n}\n\n.btn.btn-primary.btn-sm.primary-action:active {\n    display: block;\n    margin: 0 auto;\n    width: 80%;\n    background-color: #5f71fc !important;\n}"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<button class=\"btn btn-primary btn-sm primary-action\" onclick=\"frappe.set_route('List', 'Payment', 'List')\">View Payment</button>",
+  "modified": "2025-12-05 20:25:36.108227",
+  "name": "View Payments",
+  "private": 0,
+  "roles": [],
+  "script": null,
+  "style": ".btn.btn-primary.btn-sm.primary-action {\n    display: block;\n    margin: 0 auto;\n    width: 80%;\n    background-color: #5f71fc;\n}\n\n.btn.btn-primary.btn-sm.primary-action:active {\n    display: block;\n    margin: 0 auto;\n    width: 80%;\n    background-color: #5f71fc !important;\n}"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<button class=\"btn btn-primary btn-sm primary-action\" onclick=\"frappe.set_route('/app/support-ticket/new-support-ticket')\">Open Ticekt</button>",
+  "modified": "2025-12-08 18:06:11.982118",
+  "name": "New Ticket Button",
+  "private": 0,
+  "roles": [],
+  "script": null,
+  "style": ".btn.btn-primary.btn-sm.primary-action {\n    display: block;\n    margin: 0 auto;\n    width: 80%;\n    background-color: #5f71fc;\n}\n\n.btn.btn-primary.btn-sm.primary-action:active {\n    display: block;\n    margin: 0 auto;\n    width: 80%;\n    background-color: #5f71fc !important;\n}"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<button class=\"btn btn-primary btn-sm primary-action\" onclick=\"frappe.set_route('/app/loan-application/new-loan-application')\">New Application</button>",
+  "modified": "2025-11-17 21:28:53.082207",
+  "name": "New Loan Application",
+  "private": 0,
+  "roles": [],
+  "script": null,
+  "style": ".btn.btn-primary.btn-sm.primary-action {\r\n    display: block;\r\n    margin: 0 auto;\r\n    width: 80%;\r\n    background-color: #5f71fc;\r\n}\r\n\r\n.btn.btn-primary.btn-sm.primary-action:active {\r\n    display: block;\r\n    margin: 0 auto;\r\n    width: 80%;\r\n    background-color: #5f71fc !important;\r\n}"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<button class=\"btn btn-primary btn-sm primary-action\" onclick=\"frappe.set_route('/app/query-report/Payment%20Register')\">Payment Register</button>",
+  "modified": "2025-12-05 19:46:59.171574",
+  "name": "Payment Register",
+  "private": 0,
+  "roles": [],
+  "script": null,
+  "style": ".btn.btn-primary.btn-sm.primary-action {\n    display: block;\n    margin: 0 auto;\n    width: 80%;\n    background-color: #5f71fc;\n}\n\n.btn.btn-primary.btn-sm.primary-action:active {\n    display: block;\n    margin: 0 auto;\n    width: 80%;\n    background-color: #5f71fc !important;\n}"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<button class=\"btn btn-primary btn-sm primary-action\" onclick=\"frappe.set_route('/app/query-report/Collateral%20Register')\">Collateral Register</button>",
+  "modified": "2025-12-05 19:38:24.336634",
+  "name": "Collateral Register",
+  "private": 0,
+  "roles": [],
+  "script": null,
+  "style": ".btn.btn-primary.btn-sm.primary-action {\n    display: block;\n    margin: 0 auto;\n    width: 80%;\n    background-color: #5f71fc;\n}\n\n.btn.btn-primary.btn-sm.primary-action:active {\n    display: block;\n    margin: 0 auto;\n    width: 80%;\n    background-color: #5f71fc !important;\n}"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<button class=\"btn btn-primary btn-sm primary-action\" onclick=\"frappe.set_route('/app/customer/new-customer')\">New Customer</button>",
+  "modified": "2025-11-17 21:28:03.916501",
+  "name": "Add New Customer",
+  "private": 0,
+  "roles": [],
+  "script": null,
+  "style": ".btn.btn-primary.btn-sm.primary-action {\r\n    display: block;\r\n    margin: 0 auto;\r\n    width: 80%;\r\n    background-color: #5f71fc;\r\n}\r\n\r\n.btn.btn-primary.btn-sm.primary-action:active {\r\n    display: block;\r\n    margin: 0 auto;\r\n    width: 80%;\r\n    background-color: #5f71fc !important;\r\n}"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<button class=\"btn btn-primary btn-sm primary-action\" onclick=\"frappe.set_route('List', 'Loan', 'List')\">View Loans</button>",
+  "modified": "2025-12-05 17:11:08.324499",
+  "name": "View Loans",
+  "private": 0,
+  "roles": [],
+  "script": null,
+  "style": ".btn.btn-primary.btn-sm.primary-action {\n    display: block;\n    margin: 0 auto;\n    width: 80%;\n    background-color: #5f71fc;\n}\n\n.btn.btn-primary.btn-sm.primary-action:active {\n    display: block;\n    margin: 0 auto;\n    width: 80%;\n    background-color: #5f71fc !important;\n}"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<button class=\"btn btn-primary btn-sm primary-action\" onclick=\"frappe.set_route('List', 'Support Ticket', 'List')\">View Tickets</button>",
+  "modified": "2025-12-08 18:11:12.919895",
+  "name": "View Support Tickets",
+  "private": 0,
+  "roles": [],
+  "script": null,
+  "style": ".btn.btn-primary.btn-sm.primary-action {\n    display: block;\n    margin: 0 auto;\n    width: 80%;\n    background-color: #5f71fc;\n}\n\n.btn.btn-primary.btn-sm.primary-action:active {\n    display: block;\n    margin: 0 auto;\n    width: 80%;\n    background-color: #5f71fc !important;\n}"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<button class=\"btn btn-primary btn-sm primary-action\" onclick=\"frappe.set_route('/app/query-report/Loan%20Application%20Register')\">Application Register</button>",
+  "modified": "2025-11-17 21:28:30.073522",
+  "name": "Loan Application Register",
+  "private": 0,
+  "roles": [],
+  "script": null,
+  "style": ".btn.btn-primary.btn-sm.primary-action {\r\n    display: block;\r\n    margin: 0 auto;\r\n    width: 80%;\r\n    background-color: #5f71fc;\r\n}\r\n\r\n.btn.btn-primary.btn-sm.primary-action:active {\r\n    display: block;\r\n    margin: 0 auto;\r\n    width: 80%;\r\n    background-color: #5f71fc !important;\r\n}"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<button class=\"btn btn-primary btn-sm primary-action\" onclick=\"frappe.set_route('List', 'Loan Application', 'List')\">View Applications</button>",
+  "modified": "2025-11-17 21:28:47.798247",
+  "name": "View Loan Applications",
+  "private": 0,
+  "roles": [],
+  "script": null,
+  "style": ".btn.btn-primary.btn-sm.primary-action {\r\n    display: block;\r\n    margin: 0 auto;\r\n    width: 80%;\r\n    background-color: #5f71fc;\r\n}\r\n\r\n.btn.btn-primary.btn-sm.primary-action:active {\r\n    display: block;\r\n    margin: 0 auto;\r\n    width: 80%;\r\n    background-color: #5f71fc !important;\r\n}"
+ }
+]

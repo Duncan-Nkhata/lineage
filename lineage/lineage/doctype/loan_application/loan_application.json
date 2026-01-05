@@ -57,8 +57,7 @@
   "column_break_axti",
   "nok_phone_number",
   "column_break_sldn",
-  "nok_email_address",
-  "amended_from"
+  "nok_email_address"
  ],
  "fields": [
   {
@@ -136,7 +135,7 @@
    "fieldname": "customer_id",
    "fieldtype": "Link",
    "in_standard_filter": 1,
-   "label": "Customer ID",
+   "label": "Customer ID ",
    "options": "Customer",
    "reqd": 1
   },
@@ -144,7 +143,7 @@
    "fetch_from": "customer_id.phone_number",
    "fieldname": "customer_phone_number",
    "fieldtype": "Data",
-   "label": "Phone Number",
+   "label": "Phone Number \u260e\ufe0f",
    "read_only": 1,
    "reqd": 1
   },
@@ -163,7 +162,7 @@
   {
    "fieldname": "customer_email",
    "fieldtype": "Data",
-   "label": "Email Address",
+   "label": "Email Address \ud83d\udce7",
    "read_only": 1
   },
   {
@@ -195,7 +194,7 @@
    "fetch_from": "customer_id.id_number",
    "fieldname": "customer_id_number",
    "fieldtype": "Data",
-   "label": "ID Number",
+   "label": "ID Number \ud83e\udeaa",
    "read_only": 1,
    "reqd": 1
   },
@@ -203,7 +202,7 @@
    "fetch_from": "customer_id.home_address",
    "fieldname": "customer_address",
    "fieldtype": "Data",
-   "label": "Home Address",
+   "label": "Home Address \ud83c\udfe0",
    "read_only": 1,
    "reqd": 1
   },
@@ -224,7 +223,7 @@
    "fetch_from": "customer_id.nok_home_address",
    "fieldname": "nok_address",
    "fieldtype": "Data",
-   "label": "Home Address",
+   "label": "Home Address \ud83c\udfe0",
    "read_only": 1,
    "reqd": 1
   },
@@ -248,7 +247,7 @@
    "fetch_from": "customer_id.phone_number",
    "fieldname": "nok_phone_number",
    "fieldtype": "Data",
-   "label": "Phone Number",
+   "label": "Phone Number \u260e\ufe0f",
    "read_only": 1,
    "reqd": 1
   },
@@ -260,13 +259,13 @@
    "fetch_from": "customer_id.nok_email_address",
    "fieldname": "nok_email_address",
    "fieldtype": "Data",
-   "label": "Email Address",
+   "label": "Email Address \ud83d\udce7",
    "read_only": 1
   },
   {
    "fieldname": "collateral_tab",
    "fieldtype": "Tab Break",
-   "label": "Collateral"
+   "label": "Collateral \ud83d\udce6"
   },
   {
    "fieldname": "customer_section",
@@ -335,7 +334,7 @@
    "default": "Today",
    "fieldname": "application_date",
    "fieldtype": "Date",
-   "label": "Application Date",
+   "label": "Application Date \ud83d\udcc5",
    "reqd": 1
   },
   {
@@ -380,17 +379,7 @@
   {
    "fieldname": "notes",
    "fieldtype": "Text Editor",
-   "label": "Notes"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Loan Application",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
+   "label": "Notes \ud83d\udcdd"
   },
   {
    "default": "Pending Review",
@@ -399,6 +388,7 @@
    "in_standard_filter": 1,
    "label": "Status",
    "options": "Loan Application Status",
+   "read_only": 1,
    "reqd": 1
   }
  ],
@@ -406,7 +396,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-11-16 01:02:42.274187",
+ "modified": "2025-12-14 13:08:04.957195",
  "modified_by": "Administrator",
  "module": "LineAge",
  "name": "Loan Application",

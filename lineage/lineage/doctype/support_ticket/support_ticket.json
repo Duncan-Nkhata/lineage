@@ -1,0 +1,123 @@
+{
+ "actions": [],
+ "autoname": "TIK-.####",
+ "creation": "2025-12-08 17:37:36.498940",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_2xkr",
+  "record_date",
+  "status",
+  "column_break_odjk",
+  "issued_by",
+  "column_break_csiv",
+  "type",
+  "column_break_fohf",
+  "priority",
+  "section_break_cvji",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_2xkr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Status",
+   "options": "Ticket Status",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_odjk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type",
+   "options": "\nReport An Issue\nFeature Request\nGeneral Inquiry\nOther",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_csiv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "user_fullname",
+   "fieldname": "issued_by",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Issued By",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_fohf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_cvji",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "record_date",
+   "fieldtype": "Date",
+   "label": "Record Date",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "\nLow\nMedium\nHigh\nCritical",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-12-08 18:55:24.862566",
+ "modified_by": "Administrator",
+ "module": "LineAge",
+ "name": "Support Ticket",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1
+}

@@ -16,7 +16,7 @@ def execute(filters=None):
 
 def get_columns():
     return [
-        {"label": _("Customer ID"), "fieldname": "name", "fieldtype": "Link", "options": "Customer", "width": 150},
+        {"label": _("Customer ID"), "fieldname": "name", "fieldtype": "Link", "options": "Customer", "width": 200},
         {"label": _("Full Name"), "fieldname": "full_name", "fieldtype": "Data", "width": 200},
         {"label": _("Status"), "fieldname": "status", "fieldtype": "Data", "width": 120},
         {"label": _("Sex"), "fieldname": "sex", "fieldtype": "Data", "width": 100},

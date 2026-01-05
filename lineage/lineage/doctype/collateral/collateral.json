@@ -13,10 +13,17 @@
   "column_break_zhwj",
   "proof_of_ownership",
   "column_break_dxkq",
-  "collateral_condition",
+  "condition",
   "section_break_damy",
   "description",
   "loan_details_tab",
+  "loan_id",
+  "column_break_vmcx",
+  "loan_amount",
+  "column_break_otqz",
+  "loan_status",
+  "column_break_snld",
+  "outstanding_amount",
   "loan_application_details_tab",
   "loan_application",
   "column_break_dpbd",
@@ -148,42 +155,41 @@
    "fieldname": "loan_application",
    "fieldtype": "Link",
    "label": "Loan Application",
-   "options": "Loan Application",
-   "reqd": 1
+   "options": "Loan Application"
   },
   {
    "fieldname": "column_break_dpbd",
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "loan_application.loan_amount",
    "fieldname": "application_amount",
    "fieldtype": "Currency",
    "label": "Application Amount",
    "non_negative": 1,
-   "precision": "2",
-   "reqd": 1
+   "precision": "2"
   },
   {
    "fieldname": "column_break_efta",
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "loan_application.status",
    "fieldname": "application_status",
    "fieldtype": "Data",
-   "label": "Application Status",
-   "reqd": 1
+   "label": "Application Status"
   },
   {
    "fieldname": "column_break_hebo",
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "loan_application.amount_owed",
    "fieldname": "amount_owed",
    "fieldtype": "Currency",
    "label": "Amount Owed",
    "non_negative": 1,
-   "precision": "2",
-   "reqd": 1
+   "precision": "2"
   },
   {
    "fieldname": "status",
@@ -194,7 +200,51 @@
    "reqd": 1
   },
   {
-   "fieldname": "collateral_condition",
+   "fieldname": "loan_id",
+   "fieldtype": "Link",
+   "label": "Loan ID",
+   "options": "Loan",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_vmcx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "loan_id.amount_applied_for",
+   "fieldname": "loan_amount",
+   "fieldtype": "Currency",
+   "label": "Loan Amount",
+   "non_negative": 1,
+   "precision": "4",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_otqz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "loan_id.status",
+   "fieldname": "loan_status",
+   "fieldtype": "Link",
+   "label": "Loan Status",
+   "options": "Loan Status"
+  },
+  {
+   "fieldname": "column_break_snld",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "loan_id.outstanding_amount",
+   "fieldname": "outstanding_amount",
+   "fieldtype": "Currency",
+   "label": "Outstanding Amount",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "condition",
    "fieldtype": "Link",
    "in_standard_filter": 1,
    "label": "Collateral Condition",
@@ -205,7 +255,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-11-07 19:45:05.728211",
+ "modified": "2025-12-05 21:49:58.886531",
  "modified_by": "Administrator",
  "module": "LineAge",
  "name": "Collateral",
@@ -214,7 +264,6 @@
  "permissions": [
   {
    "create": 1,
-   "delete": 1,
    "email": 1,
    "export": 1,
    "print": 1,

@@ -10,18 +10,19 @@
   "general_infromation_section",
   "loan_amount",
   "service_fee",
-  "disbursed_amount",
+  "disbursement_amount",
   "column_break_uonq",
   "interest",
   "interest_rate",
-  "paid_amount",
+  "disbursed_amount",
   "column_break_ddwq",
   "total_amount",
-  "outstanding_amount",
+  "paid_amount",
   "column_break_xrxr",
-  "amount_received",
+  "outstanding_amount",
   "status",
   "loan_payment_tab",
+  "payment_history",
   "customer_details_tab",
   "customer_information_section",
   "customer_id",
@@ -47,8 +48,7 @@
   "column_break_snnn",
   "loan_type",
   "column_break_jhio",
-  "application_status",
-  "amended_from"
+  "application_status"
  ],
  "fields": [
   {
@@ -75,12 +75,13 @@
    "fieldtype": "Column Break"
   },
   {
-   "fetch_from": "application_id.amount_owed",
+   "allow_on_submit": 1,
    "fieldname": "outstanding_amount",
    "fieldtype": "Currency",
    "label": "Outstanding Amount",
    "non_negative": 1,
    "precision": "2",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -115,12 +116,14 @@
    "reqd": 1
   },
   {
+   "allow_on_submit": 1,
    "default": "0",
    "fieldname": "disbursed_amount",
    "fieldtype": "Currency",
    "label": "Disbursed Amount",
    "non_negative": 1,
    "precision": "2",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -128,21 +131,14 @@
    "fieldtype": "Column Break"
   },
   {
-   "fetch_from": "application_id.disbursement_amount",
-   "fieldname": "amount_received",
-   "fieldtype": "Currency",
-   "label": "Amount Received",
-   "non_negative": 1,
-   "precision": "2",
-   "reqd": 1
-  },
-  {
+   "allow_on_submit": 1,
    "default": "0",
    "fieldname": "paid_amount",
    "fieldtype": "Currency",
    "label": "Paid Amount",
    "non_negative": 1,
    "precision": "2",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -246,11 +242,12 @@
   {
    "fieldname": "loan_payment_tab",
    "fieldtype": "Tab Break",
-   "label": "Loan Payment(s)"
+   "label": "Payment History"
   },
   {
    "fieldname": "application_id",
    "fieldtype": "Link",
+   "in_standard_filter": 1,
    "label": "Application ID",
    "options": "Loan Application",
    "reqd": 1
@@ -297,6 +294,7 @@
    "label": "Customer Information"
   },
   {
+   "allow_on_submit": 1,
    "default": "Awaiting Disbursement",
    "fieldname": "status",
    "fieldtype": "Link",
@@ -311,21 +309,28 @@
    "label": "Email Address"
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Loan",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
+   "fieldname": "disbursement_amount",
+   "fieldtype": "Currency",
+   "label": "Disbursement Amount",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "payment_history",
+   "fieldtype": "Table",
+   "label": "Payment History",
+   "options": "Payment History",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
+ "in_create": 1,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-11-09 20:48:49.327945",
+ "modified": "2025-12-11 10:13:28.429968",
  "modified_by": "Administrator",
  "module": "LineAge",
  "name": "Loan",
@@ -333,6 +338,7 @@
  "owner": "Administrator",
  "permissions": [
   {
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
@@ -341,7 +347,9 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "select": 1,
    "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],

@@ -1,6 +1,6 @@
 {
  "aggregate_function_based_on": "",
- "color": "#5f71fc",
+ "color": "#29CD42",
  "creation": "2025-11-05 09:54:16.576792",
  "currency": "ZMW",
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_public": 1,
  "is_standard": 1,
  "label": "Approved Applications",
- "modified": "2025-11-17 18:22:06.222669",
+ "modified": "2025-12-08 17:33:45.798137",
  "modified_by": "Administrator",
  "module": "LineAge",
  "name": "Approved Applications",

@@ -6,18 +6,17 @@ frappe.listview_settings['Loan'] = {
 		const status_colors = {
 			"Awaiting Disbursement": "orange",
             "On Hold": "orange",
-            "Active": "green",
+            "Active": "purple",
             "Partially Disbursed": "blue",
             "Defaulted": "red",
             "Written Off": "red",
-            "Settled": "green"
+            "Settled": "green",
+			"Withdrawn": "grey"
 		};
 		return [__(doc.status), status_colors[doc.status], "status,=,"+doc.status];
 	},
 
 	onload: function(list_view) {
-		$('.col-lg-2.layout-side-section').hide();
-		
 		list_view.page.add_inner_button(__("Home"), function () {
 			frappe.set_route('loans')
 		}

@@ -120,13 +120,13 @@
    "fieldname": "phone_number",
    "fieldtype": "Data",
    "in_standard_filter": 1,
-   "label": "Phone Number \ud83d\udcde",
+   "label": "Phone Number \u260e\ufe0f",
    "reqd": 1
   },
   {
    "fieldname": "date_of_birth",
    "fieldtype": "Date",
-   "label": "Date of Birth",
+   "label": "Date of Birth \ud83d\udcc5",
    "reqd": 1
   },
   {
@@ -196,7 +196,7 @@
    "default": "Today",
    "fieldname": "date_of_joining",
    "fieldtype": "Date",
-   "label": "Date of Joining"
+   "label": "Date of Joining \ud83d\udcc5"
   },
   {
    "fieldname": "column_break_zvfv",
@@ -232,7 +232,7 @@
   {
    "fieldname": "nok_phone_number",
    "fieldtype": "Data",
-   "label": "Phone Number \ud83d\udcde",
+   "label": "Phone Number \u260e\ufe0f",
    "reqd": 1
   },
   {
@@ -270,7 +270,8 @@
   {
    "fieldname": "loan_history",
    "fieldtype": "Table",
-   "options": "Loan History"
+   "options": "Loan History",
+   "read_only": 1
   },
   {
    "fieldname": "district",
@@ -291,7 +292,7 @@
    "fieldname": "id_number",
    "fieldtype": "Data",
    "in_standard_filter": 1,
-   "label": "ID Number",
+   "label": "ID Number \ud83e\udeaa",
    "reqd": 1,
    "unique": 1
   },
@@ -332,7 +333,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-11-16 00:53:07.796152",
+ "modified": "2025-12-14 13:03:38.695771",
  "modified_by": "Administrator",
  "module": "LineAge",
  "name": "Customer",
@@ -356,7 +357,6 @@
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
  "search_fields": "full_name, id_number",
- "show_preview_popup": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
