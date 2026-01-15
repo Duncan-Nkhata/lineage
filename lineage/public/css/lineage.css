@@ -1,0 +1,100 @@
+.h3.chat-list-header  {
+    color: #1b375f !important;
+}
+
+/*Active Tab Color*/
+button.nav-link.active {
+    color: #1b375f !important;
+    border-bottom:1px solid #1b375f !important;
+}
+
+/*Title Heading*/
+h3.ellipsis.title-text {
+    color: #1b375f !important;
+}
+
+span.h4 {
+    color: #1b375f !important;
+}
+
+/*Help Button*/
+li.nav-item.dropdown.dropdown-help.dropdown-mobile.d-none.d-lg-block {
+    display: none !important;
+}
+
+/*Pulic Side Bar Label*/
+button.btn-reset.standard-sidebar-label {
+    display: none !important;
+}
+
+.btn-reset.standard-sidebar-label {
+    color: #1b375f !important;
+}
+
+.btn-reset.standard-sidebar-label:hover {
+    color: #1b375f !important;
+}
+
+button.btn.btn-primary.btn-sm {
+    background-color: #7fceb5 !important;
+}
+
+button.btn.btn-primary.btn-sm:hover {
+    background-color: #7fceb5 !important;
+}
+
+div.section-head {
+    color: #1b375f !important;
+}
+
+button.btn.btn-sm.btn-primary.btn-block.btn-login {
+    background-color: #7fceb5 !important;
+}
+
+button.btn.btn-sm.btn-primary.btn-block.btn-login:hover {
+    background-color: #7fceb5 !important;
+}
+
+input.disabled-selected {
+    background-color: #1b375f !important;
+    --checkbox-disabled-gradient: linear-gradient( 180deg, #1b375f -124.51%, #1b375f 100% )
+}
+
+:root {
+  --primary: #1b375f;
+}
+
+[data-theme="dark"] input[type="checkbox"]:checked {
+    --checkbox-gradient: linear-gradient( 180deg, #1b375f -124.51%, #1b375f 100% );
+    --checkbox-disabled-gradient: linear-gradient( 180deg, #1b375f -124.51%, #1b375f 100% );
+}
+
+p.help-box.small.text-muted {
+    color: #1b375f !important;
+}
+
+.number-widget-box.widget-head.widget-title {
+    color: #7fceb5 !important;
+}
+
+.number-widget-box.widget-head.widget-title.ellipsis {
+    color: #7fceb5 !important;
+}
+
+div.widget.widget-head.widget-label.widget-title.ellipsis {
+    color: #7fceb5 !important;
+}
+
+.number-widget-box .widget-head .widget-title {
+    color: #7fceb5 !important;
+}
+
+.number-widget-box .widget-head .widget-title.ellipsis {
+    color: #7fceb5 !important;
+}
+
+.number-widget-box .widget-body .number,
+.number-widget-box .widget-body .number > span,
+.number-widget-box .widget-body .number.ellipsis {
+    color: #7fceb5 !important;
+}
