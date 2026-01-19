@@ -53,4 +53,47 @@ class Payment(Document):
                 'paid_amount': self.total_amount,
                 'payment_date': self.payment_date
             })
+            
+            for payment in loan.repayment_schedule:
+                else if loan.loan_tenure == 1:
+                    if self.paid_amount < payment.payment_amount:
+                        payment.payment_amount = payment.payment_amount - self.paid_amount
+                        payment.remaining_balance = payment.remaining_balance - self.paid_amount
+                        payment.status = "Partially Paid"
+                    else if self.paid_amount == payment.payment_amount:
+                        payment.remaining_balance = 0
+                        payment.status = "Paid"
+            
+            """
+            If Payment is partial for that month:
+            a.)2 Months: Deducte the payment from the amount owed, and the outstanding amount should amount owed - paid amount.
+            i)   Amount Owed is K6,900 over a period of 2 months.
+            ii)  Amount Paid is K4,000 over a period of 2 months.
+            iii) The new balance of K1,000 should be be divided by the remaning two months.
+            
+            🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁
+            if loan.loan_tenure == 2:
+                if payment.payment_amount > self.paid_amount and payment.idx == 1:
+                    payment.payment_amount = payment.payment_amount - self.paid_amount
+                    payment.status = "Partially Paid"
+                else if payment.payment_amount < self.paid_amount:
+                    payment.payment_amount = 
+                    payment.status = "Partially Paid"
+            
+            b.)Months >= 3: Deducte the payment from the
+            🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁
+            else if loan.loan_tenure >= 3:
+                pass
+            
+            c.)1 Month: If partial payment is made before the payment date
+                i)  Amount Owed is K6,900 over a period of 1 month.
+            ii)  Amount Paid is K4,000.
+            iii) The new balance of K2,900 should be amount owed - amount paid.
+            
+            🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁
+            
+            """
             loan.save(ignore_permissions=True)
+
+    def after_insert(self):
+        pass

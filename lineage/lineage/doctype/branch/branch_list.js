@@ -4,7 +4,7 @@
 frappe.listview_settings['Branch'] = {
 	get_indicator: function(doc) {
 		const status_colors = {
-			"Active": "orange",
+			"Active": "green",
             "under Maintenance": "orange",
             "Inactive": "red"
 		};

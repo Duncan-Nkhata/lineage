@@ -34,6 +34,15 @@ frappe.ui.form.on("Loan Application", {
             frm.set_value("value_of_items", 0);
             frm.set_value("number_of_items", 0);
         }
+    },
+    amount_owed: function(frm) {
+        prepare_repayment_schedule(frm);
+    },
+    loan_tenure: function(frm) {
+        prepare_repayment_schedule(frm);
+    },
+    start_date: function(frm) {
+        prepare_repayment_schedule(frm);
     }
 });
 
@@ -131,3 +140,64 @@ function update_collateral_totals(frm) {
     frm.set_value("value_of_items", total_value);
     frm.set_value("number_of_items", frm.doc.collateral_items.length || 0);
 }
+
+function prepare_repayment_schedule(frm) {
+    frm.clear_table('repayment_schedule');
+
+    if (!frm.doc.amount_owed || !frm.doc.loan_tenure || !frm.doc.application_date) {
+        frm.refresh_field('repayment_schedule');
+        return;
+    }
+
+    let total_amount = flt(frm.doc.amount_owed, 2);
+    let tenure = frm.doc.loan_tenure;
+    let application_date = frappe.datetime.str_to_obj(frm.doc.application_date);
+    let installment_amount = flt(total_amount / tenure, 2);
+    let remaining_balance = total_amount;
+
+    for (let i = 0; i < tenure; i++) {
+        let row = frm.add_child('repayment_schedule');
+
+        row.payment_due_date = frappe.datetime.add_months(application_date, i + 1);
+        row.payment_amount = installment_amount;
+        row.principal_amount = installment_amount;
+        row.principal_amount = total_amount
+        row.remaining_balance = flt(remaining_balance, 2);
+
+        remaining_balance = flt(remaining_balance - installment_amount, 2);
+
+        row.status = "Pending";
+    }
+
+    frm.refresh_field('repayment_schedule');
+}
+
+/*
+function prepare_repayment_schedule(frm) {
+    frm.clear_table('repayment_schedule');
+
+    if (!frm.doc.amount_owed || !frm.doc.loan_tenure || !frm.doc.application_date) {
+        frm.refresh_field('repayment_schedule');
+        return;
+    }
+
+    let total_amount = frm.doc.amount_owed;
+    let tenure = frm.doc.loan_tenure;
+    let application_date = frappe.datetime.str_to_obj(frm.doc.application_date);
+
+    let installment_amount = flt(total_amount / tenure, 2);
+    let remaining_balance = total_amount;
+
+    for (let i = 0; i < tenure; i++) {
+        let row = frm.add_child('repayment_schedule');
+        remaining_balance = flt(remaining_balance - installment_amount, 2);
+
+        row.payment_due_date = frappe.datetime.add_months(application_date, i + 1);
+        row.payment_amount = installment_amount;
+        row.principal_amount = installment_amount;
+        row.remaining_balance = remaining_balance >= 0 ? remaining_balance : 0;
+        row.status = "Pending";
+    }
+    frm.refresh_field('repayment_schedule');
+}
+*/

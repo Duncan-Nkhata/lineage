@@ -25,6 +25,7 @@
   "column_break_pnhw",
   "loan_tenure",
   "amount_owed",
+  "branch",
   "section_break_esho",
   "notes",
   "section_break_anxp",
@@ -34,6 +35,8 @@
   "quarter",
   "column_break_fumw",
   "month",
+  "repayment_schedule_tab",
+  "repayment_schedule",
   "collateral_tab",
   "collateral_items",
   "customer_details_tab",
@@ -57,7 +60,8 @@
   "column_break_axti",
   "nok_phone_number",
   "column_break_sldn",
-  "nok_email_address"
+  "nok_email_address",
+  "amended_from"
  ],
  "fields": [
   {
@@ -265,7 +269,7 @@
   {
    "fieldname": "collateral_tab",
    "fieldtype": "Tab Break",
-   "label": "Collateral \ud83d\udce6"
+   "label": "Collateral"
   },
   {
    "fieldname": "customer_section",
@@ -390,13 +394,41 @@
    "options": "Loan Application Status",
    "read_only": 1,
    "reqd": 1
+  },
+  {
+   "fieldname": "repayment_schedule_tab",
+   "fieldtype": "Tab Break",
+   "label": "Repayment Schedule"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Loan Application",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "repayment_schedule",
+   "fieldtype": "Table",
+   "label": "Repayment Plan",
+   "options": "Payment Plan",
+   "read_only": 1
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-12-14 13:08:04.957195",
+ "modified": "2026-01-16 19:49:47.684465",
  "modified_by": "Administrator",
  "module": "LineAge",
  "name": "Loan Application",

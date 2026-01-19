@@ -18,11 +18,14 @@
   "column_break_ddwq",
   "total_amount",
   "paid_amount",
+  "loan_tenure",
   "column_break_xrxr",
   "outstanding_amount",
   "status",
   "loan_payment_tab",
   "payment_history",
+  "section_break_tfdv",
+  "repayment_schedule",
   "customer_details_tab",
   "customer_information_section",
   "customer_id",
@@ -48,7 +51,8 @@
   "column_break_snnn",
   "loan_type",
   "column_break_jhio",
-  "application_status"
+  "application_status",
+  "amended_from"
  ],
  "fields": [
   {
@@ -242,7 +246,7 @@
   {
    "fieldname": "loan_payment_tab",
    "fieldtype": "Tab Break",
-   "label": "Payment History"
+   "label": "Payments"
   },
   {
    "fieldname": "application_id",
@@ -320,9 +324,36 @@
    "allow_on_submit": 1,
    "fieldname": "payment_history",
    "fieldtype": "Table",
-   "label": "Payment History",
+   "label": "Disbursement & Repayment",
    "options": "Payment History",
    "read_only": 1
+  },
+  {
+   "fieldname": "section_break_tfdv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "repayment_schedule",
+   "fieldtype": "Table",
+   "label": "Repayment Schedule",
+   "options": "Payment Plan"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Loan",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "loan_tenure",
+   "fieldtype": "Int",
+   "label": "Loan Tenure (Months)",
+   "non_negative": 1
   }
  ],
  "grid_page_length": 50,
@@ -330,7 +361,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-12-11 10:13:28.429968",
+ "modified": "2026-01-16 22:19:35.032223",
  "modified_by": "Administrator",
  "module": "LineAge",
  "name": "Loan",

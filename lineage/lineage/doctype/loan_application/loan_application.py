@@ -28,6 +28,7 @@ class LoanApplication(Document):
             doc.status = "Awaiting Disbursement"
             doc.loan_application = self.name
             doc.loan_amount = self.loan_amount
+            doc.loan_tenure = self.loan_tenure
             doc.service_fee = self.service_fee
             doc.interest = self.interest
             doc.interest_rate = self.interest_rate
@@ -63,6 +64,15 @@ class LoanApplication(Document):
             row.loan_amount = self.loan_amount
             row.application_id = self.name
             customer.save(ignore_permissions=True)
+            
+            for payment in self.repayment_schedule:
+                row = doc.append("repayment_schedule", {})
+                row.payment_due_date = payment.payment_due_date
+                row.payment_amount = payment.payment_amount
+                row.remaining_balance = payment.remaining_balance
+                row.principal_amount = payment.principal_amount
+                row.status = "Pending"
+                doc.save(ignore_permissions=True)
             
             if self.loan_type == "Collateral Based":
                 for item in self.collateral_items:
