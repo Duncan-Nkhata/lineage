@@ -1,7 +1,7 @@
 app_name = "lineage"
 app_title = "LineAge"
 app_publisher = "Vortex Technology"
-app_description = "Line Age Group of Companies"
+app_description = "Loan Management System"
 app_email = "duncan.nkhata@vortextechnology.co.zm"
 app_license = "mit"
 
